@@ -3,25 +3,16 @@ public class Rocket {
     String rocketId;
     int propellants;
 
-    public Rocket(String rocketId, int propellants) throws excepcionNew {
+    public Rocket(String rocketId, int propellants) throws Exception {
         if(rocketId.length()!=8) {
-            throw new excepcionNew("Error: ID is incorrect");
-        }else{
-            this.rocketId = rocketId;
+            throw new Exception("Error: ID is incorrect");
         }
+        this.rocketId = rocketId;
+
         if(propellants <=0) {
-            throw new excepcionNew("Error: propellant amount incorrect");
-        }else{
-            this.propellants = propellants;
+            throw new Exception("Error: propellant amount incorrect");
         }
-
-
-
-    }
-    public class excepcionNew extends Exception {
-        public excepcionNew(String msg) {
-            super(msg);
-        }
+        this.propellants = propellants;
     }
 
     public String getRocketId() {
